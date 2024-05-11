@@ -9,6 +9,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "ngx-http-cache": [
+        "./dist/ngx-http-cache"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
