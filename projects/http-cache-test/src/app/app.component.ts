@@ -1,6 +1,8 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgxHttpCacheService } from '../../../ngx-http-cache/src/lib/ngx-http-cache.service';
+import {ApiService} from "./services/api.service";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-root',
@@ -11,9 +13,26 @@ import { NgxHttpCacheService } from '../../../ngx-http-cache/src/lib/ngx-http-ca
 })
 export class AppComponent implements OnInit {
   title = 'http-cache-test';
-  ngxHttpCacheService = inject(NgxHttpCacheService);
+  private readonly ngxHttpCacheService = inject(NgxHttpCacheService);
+  private readonly apiService = inject(ApiService);
+  private readonly destroyRef = inject(DestroyRef);
+
+  games = signal<any[]>([]);
 
   ngOnInit(): void {
     console.log(this.ngxHttpCacheService.getTest());
+
+    this.apiService.getGames()
+      .pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: response => {
+        if (response) {
+          this.games.set(response);
+        }
+      },
+      error: err => {
+        console.log('ERROR: ', err)
+      }
+    });
   }
 }
+
