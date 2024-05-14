@@ -6,7 +6,7 @@ NgxHttpCache is a utility library for Angular that provides caching functionalit
 ![GitHub Repo stars](https://img.shields.io/github/stars/raju/ngx-multilingual)
 ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/raju/ngx-multilingual/main)
 
-Live Preview: https://github.com/
+
 ## Usage
 
 ### 1. Install
