@@ -8,8 +8,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "ngx-http-cache": "file:../ngx-http-cache"
-  }
+  "description": ""
 }
