@@ -1,6 +1,12 @@
 {
   "name": "ngx-http-cache",
   "version": "0.0.1",
+  "description": "This is a translator that does translation.",
+  "author": {"name": "Bangar Raju Cherukuri", "email": "cbraju@hotmail.com", "url": "https://github.com/raju-cherukuri"},
+  "repository": {"type": "git", "url": "https://github.com/raju-cherukuri/translatekit"},
+  "homepage": "https://github.com/raju-cherukuri/translatekit",
+  "keywords": ["language translation", "angular", "angularv17"],
+  "license":"MIT",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
